@@ -25,7 +25,7 @@ class PrototypesController < ApplicationController
     @comments = @prototype.comments.includes(:user)
   end
   def edit
-    edit_move_to_index(@prototype)
+    move_to_index(@prototype)
   end
 
   def update
