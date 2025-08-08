@@ -9,6 +9,9 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "posts#index"
   root "prototypes#index"
-  resources :prototypes, expect: [:index]
-
+  resources :prototypes, expect: [:index] do
+    resources :comments, only: [:create]
+  end
+  resources :users, only: [:show]
+  
 end
